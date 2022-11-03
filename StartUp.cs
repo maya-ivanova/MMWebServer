@@ -13,8 +13,8 @@ namespace MayaWebServer
         public static async Task Main()
             => await new HttpServer(9090, routes => routes
             .MapGet("/", new TextResponse("Hello from 2022-11-02 meeeee!"))
-            .MapGet("/Cats", new TextResponse("<h2>Hello from tthe CATS!</h2>", "text/html"))
-            .MapGet("/Dogs", new TextResponse("<h1>Hello from the digs :)</h1>", "text/html")))
+            .MapGet("/Cats", new HtmlResponse("<h2>Hello from tthe CATS!</h2>"))
+            .MapGet("/Dogs", new HtmlResponse("<h1>Hello from the digs :)</h1>")))
             .Start();
        
         //{
